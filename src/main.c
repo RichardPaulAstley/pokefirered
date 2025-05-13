@@ -15,6 +15,7 @@
 #include "scanline_effect.h"
 #include "save_failed_screen.h"
 #include "quest_log.h"
+#include "poke_reader.h"
 
 extern u32 intr_main[];
 
@@ -159,6 +160,9 @@ void AgbMain()
     {
         ReadKeys();
 
+        // Gestion des entrées du PokeReader
+        HandlePokeReaderInput();
+
         if (gSoftResetDisabled == FALSE
          && (gMain.heldKeysRaw & A_BUTTON)
          && (gMain.heldKeysRaw & B_START_SELECT) == B_START_SELECT)
@@ -191,6 +195,13 @@ void AgbMain()
 
         PlayTimeCounter_Update();
         MapMusicMain();
+
+        // Si le jeu est en pause et qu'on n'avance pas frame par frame, on attend
+        if (ShouldPauseGame())
+        {
+            continue;
+        }
+
         WaitForVBlank();
     }
 }
