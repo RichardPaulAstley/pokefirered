@@ -16,6 +16,7 @@
 #include "berry_fix_program.h"
 #include "decompress.h"
 #include "constants/songs.h"
+#include "poke_reader.h"
 
 enum TitleScreenScene
 {
@@ -729,6 +730,7 @@ static void SetTitleScreenScene_Cry(s16 *data)
         if (!gPaletteFade.active)
         {
             SeedRngAndSetTrainerId();
+            SetPokeReaderAfterTitleScreen();
             SetSaveBlocksPointers();
             ResetMenuAndMonGlobals();
             Save_ResetSaveCounters();

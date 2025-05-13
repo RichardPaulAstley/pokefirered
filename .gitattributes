@@ -1,13 +1,35 @@
-*.pal text eol=crlf
+# Définir le comportement par défaut pour tous les fichiers
+* text=auto
 
-*.s text eol=lf
+# Forcer CRLF pour les fichiers source C
+*.c text eol=crlf
+*.h text eol=crlf
+
+# Forcer CRLF pour les fichiers de configuration
+*.txt text eol=crlf
+*.md text eol=crlf
+*.ld text eol=crlf
+*.s text eol=crlf
+*.inc text eol=crlf
+
+# Fichiers binaires
+*.gba binary
+*.bin binary
+*.lz binary
+*.4bpp binary
+*.8bpp binary
+*.gbapal binary
+*.png binary
+*.bmp binary
+*.wav binary
+*.mid binary
+*.mp3 binary
+
+*.pal text eol=crlf
 *.txt text eol=lf
 Makefile text eol=lf
 *.mk text eol=lf
-*.c text eol=lf
-*.h text eol=lf
 *.pl text eol=lf
-*.inc text eol=lf
 *.sha1 text eol=lf
 *.sed text eol=lf
 *.sh text eol=lf
@@ -17,8 +39,6 @@ Makefile text eol=lf
 *.yml text eol=lf
 *.py text eol=lf
 
-*.png binary
-*.bin binary
 *.pcm binary
 
 *.h linguist-language=C
