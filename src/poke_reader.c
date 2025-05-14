@@ -8,6 +8,8 @@
 #include "window.h"
 #include "random.h"
 #include "poke_reader.h"
+#include "string_util.h"
+#include "strings.h"
 
 // Structure pour stocker l'état du PokeReader
 struct PokeReaderState {
