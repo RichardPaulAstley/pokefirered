@@ -87,9 +87,10 @@ void HandlePokeReaderInput(void)
         }
         else
         {
-            AddTextPrinterParameterized(sPokeReaderState.infoWindowId, FONT_NORMAL, gText_NotAfterTitle, 0, 0, 0, NULL);
+            FillWindowPixelBuffer(sPokeReaderState.infoWindowId, PIXEL_FILL(0));
+            AddTextPrinterParameterized(sPokeReaderState.infoWindowId, FONT_NORMAL, gText_NotAfterTitle, 0, 1, 0, NULL);
+            CopyWindowToVram(sPokeReaderState.infoWindowId, COPYWIN_FULL);
         }
-        CopyWindowToVram(sPokeReaderState.infoWindowId, COPYWIN_BOTH);
     }
 }
 
