@@ -1,4 +1,4 @@
-#include "global.h"
+﻿#include "global.h"
 #include "gba/gba.h"
 #include "main.h"
 #include "field_control_avatar.h"
@@ -22,7 +22,15 @@ struct PokeReaderState {
     u32 initialSeed;
 };
 
-static struct PokeReaderState sPokeReaderState = {0};
+static struct PokeReaderState sPokeReaderState = {
+    .isPaused = FALSE,
+    .frameAdvance = FALSE,
+    .showInfo = FALSE,
+    .afterTitleScreen = FALSE,
+    .infoWindowId = 0xFF,
+    .frameCount = 0,
+    .initialSeed = 0
+};
 
 // Template de fenêtre pour le PokeReader
 static const struct WindowTemplate sWindowTemplate_PokeReader = {
