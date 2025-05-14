@@ -24,6 +24,17 @@ struct PokeReaderState {
 
 static struct PokeReaderState sPokeReaderState = {0};
 
+// Template de fenêtre pour le PokeReader
+static const struct WindowTemplate sWindowTemplate_PokeReader = {
+    .bg = 0,
+    .tilemapLeft = 2,
+    .tilemapTop = 2,
+    .width = 26,
+    .height = 4,
+    .paletteNum = 15,
+    .baseBlock = 0x198
+};
+
 // Fonction pour gérer les entrées du PokeReader
 void HandlePokeReaderInput(void)
 {
